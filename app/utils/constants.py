@@ -1,0 +1,1 @@
+escape_sequences_list = ["\n", "\r", "\t", "\a", "\f", "\v"]
