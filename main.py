@@ -1,8 +1,10 @@
 from fastapi import FastAPI
 import uvicorn
 
-from configurations import auth_host, auth_port, auth_reload
+from configurations import auth_host, auth_port, auth_reload, llm_type
 from data_models import CheckComplianceRequest, CheckComplianceResponse
+from app.extraction.extract_webpage import extract_text_from_url
+from app.llm.llm import LLM
 
 app = FastAPI()
 
@@ -14,8 +16,11 @@ async def root():
 
 @app.post("/check_compliance")
 async def check_compliance(request: CheckComplianceRequest):
+    content = extract_text_from_url(request.web_page_url)
+    policy = extract_text_from_url(request.compliance_policy_url)
+    findings = await LLM(llm_type=llm_type).run(content, policy)
 
-    return CheckComplianceResponse(status="success", compliant=True, findings={})
+    return CheckComplianceResponse(status="success", compliant=findings["compliant"], findings=findings["findings"])
 
 
 if __name__ == "__main__":

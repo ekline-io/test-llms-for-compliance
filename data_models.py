@@ -3,7 +3,7 @@ from pydantic import BaseModel
 
 class CheckComplianceRequest(BaseModel):
     web_page_url: str
-    compliance_policy: str
+    compliance_policy_url: str
 
 
 class CheckComplianceResponse(BaseModel):
