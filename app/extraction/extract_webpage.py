@@ -10,7 +10,7 @@ def extract_text_from_url(url):
     # Extract the article content from the webpage
     content = g.extract(url)
     # Clean the article text
-    text = content.cleaned_text
+    text = content.title + " \n" + content.cleaned_text
     preprocessed_text = text_clean_up(text)
     # Log success message and return the preprocessed text
     logger.info(f"Extracted URL: {url}")
