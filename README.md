@@ -45,6 +45,52 @@ We majorly have 3 modules in the architecture:
 2. Extract: This module is responsible for extracting any webpage url given to it. It uses Goose to extract the webpage content. We can later on include any kind of media in this module using builder design used in llm module.
 3. LLM: This module is responsible for checking the compliance of the webpage content against the compliance policy. This module also includes a builder to plug and use any kind of llm for the compliance check. Currently, we are using Azure OpenAI API to check the compliance.
 
+
+### Results
+1. Compliance Check for https://www.joinguava.com/ against the compliance policy https://www.joinguava.com/compliance-policy
+    - Request:
+    ```
+    {
+        "web_page_url": "https://www.joinguava.com/",
+        "compliance_policy_url": "https://docs.stripe.com/treasury/marketing-treasury"
+    }
+    ```
+    - Response:
+    ```
+    {
+        "status": "success",
+        "compliant": false,
+        "findings":   "findings": {
+                                   "Banking Terminology": "The content uses terms like 'business checking account', 'banking', and 'bank accounts' which are prohibited for use by entities that are not state- or federally-chartered banks or credit unions.",
+                                   "Yield Disclosure": "The content does not disclose that the yield percentage is subject to change and the conditions under which it might change. It also does not notify customers whenever the yield percentage has changed.",
+                                   "FDIC Insurance": "The content does not mention anything about FDIC insurance eligibility, the conditions for FDIC pass-through deposit insurance, or the fact that neither the platform nor Stripe are FDIC insured institutions."
+                                    }
+   }
+    ```
+    - Screenshot:
+![](resources/sample_results/joinguava_compliance_check.png)
+
+
+2. Compliance Check for https://www.stripe.com/ against the compliance policy https://www.joinguava.com/compliance-policy
+    - Request:
+    ```
+    {
+        "web_page_url": "https://www.stripe.com/",
+        "compliance_policy_url": "https://docs.stripe.com/treasury/marketing-treasury"
+    }
+    ```
+    - Response:
+    ```
+    {
+        "status": "success",
+        "compliant": true,
+        "findings": {}
+    }
+    ```
+    - Screenshot:
+   
+   ![](resources/sample_results/stripe_compliance_check.png)
+
 ### Future Scope
 1. We can include more llms for the compliance check.
 2. We can include more extractors for the webpage content.
