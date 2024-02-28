@@ -6,6 +6,7 @@ This is currently powered by AZURE OPENAI API which is using GPT-4 model to gene
 
 ## Steps to run the service
 1. Clone the repository
+2. Set the configurations in configurations.py, update azure key and deplyoment url.
 
 #### Docker run
 2. Run the following command to build the docker image
