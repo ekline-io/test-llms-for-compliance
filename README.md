@@ -9,18 +9,18 @@ This is currently powered by AZURE OPENAI API which is using GPT-4 model to gene
 2. Set the configurations in configurations.py, update azure key and deplyoment url.
 
 #### Docker run
-2. Run the following command to build the docker image
+3. Run the following command to build the docker image
 ```docker build -t llms-for-compliance .```
-3. Run the following command to run the docker container
+4. Run the following command to run the docker container
 ```docker run -p 80:80 llms-for-compliance```
-4. The service will be running on http://localhost:80
+5. The service will be running on http://localhost:80
 
 #### Local run
-2. Run the following command to install the dependencies
+3. Run the following command to install the dependencies
 ```pip install -r requirements.txt```
-3. Run the following command to start the service
+4. Run the following command to start the service
 ```python main.py```
-4. The service will be running on http://localhost:80
+5. The service will be running on http://localhost:80
 
 ### API Endpoints
 1. POST /compliance-check
