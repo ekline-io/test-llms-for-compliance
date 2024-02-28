@@ -44,3 +44,10 @@ We majorly have 3 modules in the architecture:
 1. Configurations: This module is responsible for setting the configurations for the service. We can set the configurations for the service in the configurations.py file.
 2. Extract: This module is responsible for extracting any webpage url given to it. It uses Goose to extract the webpage content. We can later on include any kind of media in this module using builder design used in llm module.
 3. LLM: This module is responsible for checking the compliance of the webpage content against the compliance policy. This module also includes a builder to plug and use any kind of llm for the compliance check. Currently, we are using Azure OpenAI API to check the compliance.
+
+### Future Scope
+1. We can include more llms for the compliance check.
+2. We can include more extractors for the webpage content.
+3. We can try some other techniques to check the compliance of the webpage content. 
+   1. We can call llm multiple times to extract key information from the compliance policy and use that to validate the webpage content, the prompt implementation of this is already in the prompts file, but the results were bit out of control and hence decided to go with simpler approach. I believe we can achieve better results with some prompt engineering work.
+4. We can fine-tune the llms to give controlled and better results.
