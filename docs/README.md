@@ -17,7 +17,7 @@ This is currently powered by AZURE OPENAI API which is using GPT-4 model to gene
 
 #### Local run
 3. Run the following command to install the dependencies
-```pip install -r requirements.txt```
+pip install -r requirements.txt
 4. Run the following command to start the service
 ```python main.py```
 5. The service will be running on http://localhost:80
