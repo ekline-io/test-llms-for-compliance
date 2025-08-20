@@ -1,6 +1,6 @@
 # llms-for-compliace
 
-# This is version one of docs
+# This is version 1 (one) of docs
 
 
 ## Description
@@ -14,13 +14,13 @@ This is currently powered by AZURE OPENAI API which is using GPT-4 model to gene
 #### Docker run
 3. Run the following command to build the docker image
 ```docker build -t llms-for-compliance .```
-4. Run the following command to run the docker container
+4. Run the following command to start the docker container
 ```docker run -p 80:80 llms-for-compliance```
 5. The service will be running on http://localhost:80
 
 #### Local run
 3. Run the following command to install the dependencies
-```pip install -r requirements.txt```
+pip install -r requirements.txt
 4. Run the following command to start the service
 ```python main.py```
 5. The service will be running on http://localhost:80
