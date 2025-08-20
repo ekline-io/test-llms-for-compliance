@@ -1,6 +1,6 @@
 # llms-for-compliace
 
-# This is version one of docs
+This is version 1 (one) of docs
 
 
 ## Description
