@@ -1,4 +1,4 @@
-from langchain.chat_models import AzureChatOpenAI
+from langchain.chat_models import AzureChatOpenAI, ChatOpenAI
 
 from configurations import AZURE_OPENAI_DEPLOYMENT_NAME
 
@@ -10,6 +10,8 @@ class LLMBuilder:
         """This function takes in the type of LLM and returns the corresponding LLM class."""
         if llm_type == 'azure_openai':
             return AzureChatOpenAI
+        elif llm_type == "openai":
+            return ChatOpenAI
         else:
             raise ValueError("Invalid LLM type")
 
