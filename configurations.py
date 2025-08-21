@@ -3,7 +3,7 @@ auth_port = 80
 auth_reload = True
 
 
-llm_type = "azure_openai"
+llm_type = "openai"
 
 OPENAI_API_TYPE = "azure"
 OPENAI_API_VERSION = "2023-05-15"
